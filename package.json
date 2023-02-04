@@ -1,0 +1,19 @@
+{
+  "name": "spotifyConnectedApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run server\" \"npm run client\"",
+    "server"  : "cd server && npm start",
+    "client" : "cd client && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

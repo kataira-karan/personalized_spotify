@@ -1,0 +1,42 @@
+.primary-card-container {
+  width: 10vw;
+  padding: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  background-image: var(--secondaryBg);
+  margin: 0.5rem;
+}
+
+
+.primary-card-container:hover .primary-card-description {
+    transform: translateY(-200%);
+    transition: 0.5s all ease;
+}
+.primary-card-container:hover .primary-card-image{
+    filter:blur(2px);
+    transition: 0.5s all ease;
+}
+
+.primary-card-image:hover {
+    background: var(--primaryBg) ;
+}
+
+.primary-card-image{
+    transition: 0.5s all ease;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.primary-card-description{
+    position: absolute;
+    background-color: var(--spotifyGreen);
+    transform: translateY(100%);
+    transition: 0.5s all ease;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    padding-block: 0.8rem;
+    font-weight: bold;
+
+}
