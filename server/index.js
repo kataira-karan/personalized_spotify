@@ -18,16 +18,22 @@ app.get("/login", (req, res) => {
   console.log("Login state");
   // let state = generateRandomString(16);
 
-  let state = "abcdadanfjsdnfanlfknaandhasdhg1e3rds";
+  let state = "abcwertyuioplkjh";
   res.cookie("stateKey", state);
-  let socpe = "user-read-private user-read-email";
+  const scope = [
+    "user-read-recently-played",
+    "user-read-private",
+    "user-read-email",
+    "user-top-read",
+    "user-follow-read",
+  ].join(" ");
 
   const queryParams = queryString.stringify({
-    client_id: CLIENT_ID,
     response_type: "code",
+    client_id: CLIENT_ID,
+    scope: scope,
     redirect_uri: REDIRECT_URI,
     state: state,
-    socpe: socpe,
   });
 
   console.log(queryParams);
@@ -56,9 +62,9 @@ app.get("/callback", (req, res) => {
   })
     .then((response) => {
       if (response.status === 200) {
-        const { access_token, token_type, refresh_token, expires_in } =
+        const { access_token, token_type, refresh_token, expires_in, scope } =
           response.data;
-
+        console.log(`scope : ${scope}`);
         // axios
         //   .get("https://api.spotify.com/v1/me", {
         //     headers: {

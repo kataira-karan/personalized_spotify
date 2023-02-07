@@ -15,7 +15,7 @@ const Header = (props) => {
   const headerStyle = {
     display: "flex",
     color: color ? color : "white",
-    headerWidth: headerWidth ? headerWidth : "90%",
+    headerWidth: headerWidth ? headerWidth : "70%",
     justifyContent: "space-between",
     fontSize: fontSize ? fontSize : " 1rem",
     padding: padding ? padding : "1rem",

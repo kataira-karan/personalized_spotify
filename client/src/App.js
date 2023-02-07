@@ -1,7 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
-import { accessToken, getCurrentUserProfile } from "./Spotify";
+import {
+  accessToken,
+  getCurrentUserProfile,
+  getCurrentUserTopArtists,
+} from "./Spotify";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import UserProfile from "./components/UserProfile/UserProfile";
 
@@ -14,12 +18,10 @@ function App() {
       try {
         const { data } = await getCurrentUserProfile();
         setprofile(data);
-        console.log(data);
         settoken(accessToken);
       } catch (error) {
         console.log(error);
       }
-      console.log("HElooo");
     };
     fetchData();
   }, []);

@@ -39,7 +39,7 @@ const refreshToken = async () => {
       LOCALSTORAGE_VALUES.refreshToken === "undefined" ||
       Date.now() - Number(LOCALSTORAGE_VALUES.timeStamp) / 1000 < 1000
     ) {
-      console.log("No refresh Token");
+      // console.log("No refresh Token");
 
       logOut();
     } else {
@@ -63,16 +63,16 @@ const getAccessToken = () => {
     [LOCALSTORAGE_KEYS.refreshToken]: urlParams.get("refresh_token"),
     [LOCALSTORAGE_KEYS.expireTime]: urlParams.get("expires_in"),
   };
-  console.log(urlParams.get("access_token"));
-  console.log(`accessToken : ${LOCALSTORAGE_VALUES.accessToken}`);
+  // console.log(urlParams.get("access_token"));
+  // console.log(`accessToken : ${LOCALSTORAGE_VALUES.accessToken}`);
 
   const hasError = urlParams.get("error") || false;
 
-  console.log(`hasTokenExpired()  : ${hasTokenExpired()}`);
-  console.log(`hasError : ${hasError}`);
-  console.log(
-    `LOCALSTORAGE_VALUES.accessToken : ${LOCALSTORAGE_VALUES.accessToken}`
-  );
+  // console.log(`hasTokenExpired()  : ${hasTokenExpired()}`);
+  // console.log(`hasError : ${hasError}`);
+  // console.log(
+  //   `LOCALSTORAGE_VALUES.accessToken : ${LOCALSTORAGE_VALUES.accessToken}`
+  // );
   // if htere is an error in fetching accessToken or localstorage is expired
   if (
     hasError ||
@@ -105,6 +105,7 @@ const getAccessToken = () => {
 };
 
 export const accessToken = getAccessToken;
+export const logout = logOut;
 // export const logout = logOut;
 let access_token_value = accessToken();
 // setting defautl axios setting to keep the code clean
@@ -113,3 +114,9 @@ axios.defaults.headers["Authorization"] = `Bearer ${access_token_value}`;
 axios.defaults.headers["Content-Type"] = "application/json";
 
 export const getCurrentUserProfile = () => axios.get("/me");
+
+export const getCurrentUserTopArtists = () => axios.get("/me/top/artists/");
+
+export const getTopArtists = (time_range = "short_term") => {
+  return axios.get(`/me/top/artists?time_range=${time_range}`);
+};

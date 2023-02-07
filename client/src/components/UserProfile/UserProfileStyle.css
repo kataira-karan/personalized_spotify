@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.user-profile-section{
+  min-width: 500px;
+}
+
 .nav-container {
   width: 7.5vw;
   min-width: 150px;
@@ -52,9 +56,25 @@
   padding: 3rem;
 }
 
-.top-artists {
+.top-artists , .top-songs {
   display: flex;
+  flex-wrap: wrap
 }
+
+.user-track-list {
+  display: flex;
+  background-color: red;
+  width: 92%;
+}
+.artists-container{
+  width: 60%;
+  margin-right: 2rem;
+
+}
+.top-songs-container{
+  width: 50%;
+}
+
 
 @media screen and (max-width: 600px) {
   .logo-item {

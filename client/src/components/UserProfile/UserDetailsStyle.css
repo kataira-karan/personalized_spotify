@@ -18,7 +18,8 @@ background: var(--primaryBg);
 
 .user-profile-image{
     border-radius: 15px; 
-    height: 100%;  
+    height: auto;
+    max-width: 100%;  
 }
 
 /* \ user details section */

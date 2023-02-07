@@ -1,7 +1,8 @@
 import React from "react";
 import "./UserDetailsStyle.css";
 
-const UserDetails = () => {
+const UserDetails = (props) => {
+  const { profile } = props;
   return (
     <div className="userDetails-container">
       <div className="user-profile-image-container">
@@ -12,15 +13,17 @@ const UserDetails = () => {
       </div>
       <div className="user-details">
         <span className="profile"> Profile</span>
-        <span className="user-name"> Karan Kataria </span>
+        <span className="user-name"> {profile.display_name} </span>
         <div className="followers-following-details">
           <div className="followers-container">
-            <span className="followers-container-value">1.3</span>
+            <span className="followers-container-value">
+              {profile.followers.total}
+            </span>
             <span className="followers-container-title">followers</span>
           </div>
           <div className="followers-container">
             <span className="followers-container-value">2.3</span>
-            <span className="followers-container-title">followers</span>
+            <span className="followers-container-title">following</span>
           </div>
         </div>
       </div>

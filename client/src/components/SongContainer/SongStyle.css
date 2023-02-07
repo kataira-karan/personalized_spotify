@@ -1,0 +1,35 @@
+.song-container{
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    /* background-color: gray; */
+    margin-block: 0.5rem;
+    color: white;
+    padding-inline:1rem;
+    align-items: center;
+}
+
+.song-poster-container{
+    flex:0.5;
+    margin-right: 1rem;
+}
+
+.song-poster{
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
+
+    object-fit: cover;
+}
+
+.song-info{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.song-name{
+    font-weight: bold;
+}
