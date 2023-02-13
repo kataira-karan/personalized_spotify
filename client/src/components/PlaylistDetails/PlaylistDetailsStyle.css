@@ -1,0 +1,51 @@
+.playlist-details-component{
+
+    display: flex;
+    width: 100%;
+    background-image: linear-gradient(
+        to bottom,
+        #000000,
+        #101010,
+        #191919,
+        #232323,
+        #2c2c2c
+      );
+      height: 100%;
+      color: white;
+
+}
+
+.playlist-details{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  
+}
+
+.playlist-tracks{
+    width: 50%;
+}
+
+.playlist-image-container {
+    height: 30vh;
+    margin: 1rem 0;
+    /* background-color: red; */
+  }
+  
+  .playlist-image {
+    border-radius: 50%;
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+  }
+
+  .playlist-tracks{
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+  }

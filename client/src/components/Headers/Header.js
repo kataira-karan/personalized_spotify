@@ -10,6 +10,7 @@ const Header = (props) => {
     buttonFunction,
     fontWeight,
     fontSize,
+    isButton,
   } = props;
 
   const headerStyle = {
@@ -25,16 +26,18 @@ const Header = (props) => {
   return (
     <section style={headerStyle} className="header-container">
       <span>{title ? title : "Header"}</span>
-      <span>
-        <Button
-          buttonText="See All"
-          backgroundColor="transparent"
-          borderRadius="5px"
-          border="1px solid white"
-          padding="0.5rem"
-          fontSize="0.8rem"
-        ></Button>
-      </span>
+      {isButton ? (
+        <span>
+          <Button
+            buttonText="See All"
+            backgroundColor="transparent"
+            borderRadius="5px"
+            border="1px solid white"
+            padding="0.5rem"
+            fontSize="0.8rem"
+          ></Button>
+        </span>
+      ) : null}
     </section>
   );
 };

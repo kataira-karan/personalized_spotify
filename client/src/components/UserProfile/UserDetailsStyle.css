@@ -1,67 +1,71 @@
 .userDetails-container {
-background: var(--primaryBg);
+  background: var(--primaryBg);
   display: flex;
-    width: 92.5vw;
-    height: 40vh;
-    margin-left:  7.5vw;
-    color:white;
-    padding:3rem;
+  height: 40vh;
+  width: 100%;
+  color: white;
+  padding: 3rem;
+  position : relative
+
 }
 
-.user-profile-image-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    height: 100%;
+.logout-button{
+  position: absolute;
+  top:3rem;
+  right: 3rem;
 }
 
-.user-profile-image{
-    border-radius: 15px; 
-    height: auto;
-    max-width: 100%;  
+.user-profile-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+}
+
+.user-profile-image {
+  border-radius: 15px;
+  height: auto;
+  max-width: 100%;
 }
 
 /* \ user details section */
 
-.user-details{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;   
+.user-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
 }
 
-.profile{
-    text-transform: uppercase;
-    
+
+
+.profile {
+  text-transform: uppercase;
 }
 
-.user-name{
-    font-size: 3.5rem;
-    text-transform: capitalize;
+.user-name {
+  font-size: 3.5rem;
+  text-transform: capitalize;
 }
 
-.followers-following-details{
-    display: flex;
+.followers-following-details {
+  display: flex;
 }
-.followers-container{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-right: 1rem ;
-    margin-top: 1rem;
-    
+.followers-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-right: 1rem;
+  margin-top: 1rem;
 }
-.followers-container-title{
-    text-transform: uppercase;
+.followers-container-title {
+  text-transform: uppercase;
 }
 
-.followers-container-value{
-    color : var(--spotifyGreen)
+.followers-container-value {
+  color: var(--spotifyGreen);
 }
 
 /* user details section ends */
-
-
-
-

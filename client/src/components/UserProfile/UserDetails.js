@@ -1,6 +1,7 @@
 import React from "react";
+import Button from "../Button/Button";
 import "./UserDetailsStyle.css";
-
+import { logout } from "../../Spotify";
 const UserDetails = (props) => {
   const { profile } = props;
   return (
@@ -8,10 +9,28 @@ const UserDetails = (props) => {
       <div className="user-profile-image-container">
         <img
           className="user-profile-image"
-          src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBxERfeH8CH5Hfr-fdowRXIGzqlilsEzmPzg&usqp=CAU"
+          src={
+            profile.images.length != 0
+              ? profile.images[0].url
+              : "https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/user-profile-icon.png "
+          }
         />
       </div>
       <div className="user-details">
+        <div className="logout-button">
+          <Button
+            backgroundColor="#1db954"
+            color="black"
+            border="none"
+            fontWeight="bold"
+            buttonText="Logout"
+            onClickFunction={logout}
+          >
+            {" "}
+            Logout{" "}
+          </Button>
+        </div>
+
         <span className="profile"> Profile</span>
         <span className="user-name"> {profile.display_name} </span>
         <div className="followers-following-details">

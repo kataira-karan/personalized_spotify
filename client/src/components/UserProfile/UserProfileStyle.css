@@ -1,13 +1,16 @@
 .user-profile-container {
-  display: flex;
+  width: 100%;
 }
 
-.user-profile-section{
-  min-width: 500px;
+.user-profile-section {
+  display: flex;
+  flex-direction: column;
+  /* min-width: 500px; */
+  width: 100%;
 }
 
 .nav-container {
-  width: 7.5vw;
+  width: 10vw;
   min-width: 150px;
   height: 100vh;
   padding-block: 3rem;
@@ -50,31 +53,42 @@
 
 .user-track-list {
   background-image: linear-gradient(to bottom, #202020 0%, black 100%);
-  width: 92.5vw;
+  width: 100%;
   height: 60vh;
-  margin-left: 7.5vw;
   padding: 3rem;
-}
-
-.top-artists , .top-songs {
   display: flex;
-  flex-wrap: wrap
 }
 
+.top-artists, 
+.top-songs {
+  display: flex;
+  flex-wrap: wrap;
+  /* overflow: scroll; */
+}
+.top-artists::-webkit-scrollbar,
+.top-songs::--webkit-scrollbar
 .user-track-list {
-  display: flex;
-  background-color: red;
-  width: 92%;
+  display: none;
 }
-.artists-container{
+.artists-container {
   width: 60%;
   margin-right: 2rem;
-
 }
-.top-songs-container{
+.top-songs-container {
   width: 50%;
 }
 
+.active {
+  background-color: rgb(94, 94, 94);
+  border-left: 10px solid var(--spotifyGreen);
+  transition: 0.3s all ease;
+}
+
+.detail-list-item[aria-current="page"] {
+  background-color: rgb(94, 94, 94);
+  border-left: 10px solid var(--spotifyGreen);
+  transition: 0.3s all ease;
+}
 
 @media screen and (max-width: 600px) {
   .logo-item {

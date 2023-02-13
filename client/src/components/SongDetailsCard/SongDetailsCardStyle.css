@@ -1,0 +1,58 @@
+.song-details-card-style {
+  display: flex;
+  height: 7vh;
+  width: 90%;
+  margin: auto;
+  padding-block: 0.5rem;
+ color:white;
+ margin-block:0.3rem;
+ min-width: 800px;
+}
+
+.song-details-number{
+    flex: 0.1;
+}
+
+.song-details-poster-container{
+        flex:0.2;
+        margin-right: 0.1rem;
+        /* background-color: red; */
+        
+}
+
+.song-details-poster{
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.song-details-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
+    ;
+    flex:2;
+    /* background-color: red; */
+}
+
+.song-details-album{
+    flex:1;
+    text-align: end;
+ 
+}
+.song-details-duration{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    text-align: end;
+}
+
+.song-details-song-name{
+    font-weight: bold;
+}
+
+.song-details-singer-name{
+    font-size: 0.8rem;
+    letter-spacing: 1.3px;
+}

@@ -1,0 +1,62 @@
+.recenlty-played-songs-header {
+  height: 40vh;
+  width: 100%;
+  padding: 2rem;
+  background-image: linear-gradient(
+    to bottom,
+    #0651c2,
+    #0851b5,
+    #1251a9,
+    #1c509b,
+    #254f8e
+  );
+  box-shadow: 2px 2px 2px #171927;
+}
+
+.recenly-played-songs {
+  height: 60vh;
+  padding-top: 2rem;
+  overflow: scroll;
+  background-image: linear-gradient(
+    to bottom,
+    #254f8e,
+    #263c69,
+    #202946,
+    #171927,
+    #030304
+  );
+}
+
+.recenlty-played-songs-header {
+  display: flex;
+  width: 100%;
+}
+
+.recenlty-played-songs-header-image-container {
+  /* width: 30%; */
+  height: 100%;
+  /* box-shadow: 5px 5px 2px #0751BE; */
+  margin-right: 2rem;
+  background-image: linear-gradient(to right bottom, #202946, #263c69, #254f8e);
+  padding: 2rem;
+  /* background-color: red; */
+}
+
+.recenlty-played-songs-header-image {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+
+.recenlty-played-songs-header-details {
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+  justify-content: flex-end;
+}
+
+.recenlty-played-songs-header-title {
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+}

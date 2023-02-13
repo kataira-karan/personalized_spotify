@@ -39,7 +39,7 @@ const refreshToken = async () => {
       LOCALSTORAGE_VALUES.refreshToken === "undefined" ||
       Date.now() - Number(LOCALSTORAGE_VALUES.timeStamp) / 1000 < 1000
     ) {
-      // console.log("No refresh Token");
+      console.log("No refresh Token");
 
       logOut();
     } else {
@@ -47,7 +47,8 @@ const refreshToken = async () => {
         `/refresh_token?refresh_token=${LOCALSTORAGE_VALUES.refreshToken}`
       );
 
-      localStorage.setItem(LOCALSTORAGE_KEYS.accessToken, data.accessToken);
+      console.log(data);
+      localStorage.setItem(LOCALSTORAGE_KEYS.accessToken, data.access_token);
       localStorage.setItem(LOCALSTORAGE_KEYS.timeStamp, Date.now());
     }
   } catch (error) {
@@ -77,7 +78,7 @@ const getAccessToken = () => {
   if (
     hasError ||
     hasTokenExpired() ||
-    LOCALSTORAGE_VALUES.accessToken === undefined
+    LOCALSTORAGE_VALUES.accessToken === "undefined"
   ) {
     console.log("Expired TOken");
     refreshToken();
@@ -104,8 +105,15 @@ const getAccessToken = () => {
   return false;
 };
 
+const millisToMinutesAndSeconds = (millis) => {
+  var minutes = Math.floor(millis / 60000);
+  var seconds = ((millis % 60000) / 1000).toFixed(0);
+  return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+};
+
 export const accessToken = getAccessToken;
 export const logout = logOut;
+export const miliToMinAndSec = millisToMinutesAndSeconds;
 // export const logout = logOut;
 let access_token_value = accessToken();
 // setting defautl axios setting to keep the code clean

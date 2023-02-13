@@ -1,0 +1,44 @@
+.artist-details-container {
+  background-image: linear-gradient(
+    to bottom,
+    #000000,
+    #101010,
+    #191919,
+    #232323,
+    #2c2c2c
+  );
+  height: 100%;
+  color: white;
+  display: flex;
+  padding: 3rem;
+}
+
+.artist-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.artist-image-container {
+  height: 30vh;
+  margin: 1rem 0;
+  /* background-color: red; */
+}
+
+.artist-image {
+  border-radius: 50%;
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+
+.artists-top-tracks {
+  overflow: scroll;
+  width: 50%;
+}
+
+.artists-top-tracks::-webkit-scrollbar {
+  display: none;
+}

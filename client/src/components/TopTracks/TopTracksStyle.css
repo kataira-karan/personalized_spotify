@@ -1,0 +1,71 @@
+.top-tracks-page-container {
+  background-image: linear-gradient(
+    to bottom,
+    #000000,
+    #3b3b3b,
+    #777777,
+    #b9b9b9,
+    #ffffff
+  );
+  overflow: scroll;
+  color: white;
+  padding: 5rem;
+}
+
+.top-tracks-page-title {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.top-tracks-page-header {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.top-track-filter {
+  display: flex;
+}
+
+.top-tracks-filter {
+  padding: 0 0.3rem;
+  cursor: pointer;
+}
+
+/* start top track card contianer */
+
+.top-track-card-container {
+  display: flex;
+  height: 8vh;
+  padding: 1rem;
+}
+
+.top-track-image-container {
+  padding-right: 1rem;
+}
+
+.top-track-card-container:hover {
+  background-color: black;
+}
+
+.top-track-image {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-track-info {
+  flex: 3;
+}
+
+.top-track-artist {
+  display: flex;
+}
+.top-track-artist-name {
+  padding-right: 0.6rem;
+  font-size: 0.9rem;
+  color: #979797;
+  cursor: pointer;
+}
+
+/*end  top track card contianer */

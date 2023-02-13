@@ -133,6 +133,7 @@ app.get("/refresh_token", (req, res) => {
     },
   })
     .then((respone) => {
+      console.log(respone.data);
       res.send(respone.data);
     })
     .catch((error) => {

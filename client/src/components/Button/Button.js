@@ -7,9 +7,11 @@ const Button = (props) => {
     color,
     backgroundColor,
     fontSize,
-
     buttonText,
     border,
+    fontWeight,
+    onClickFunction,
+    margin,
   } = props;
 
   const buttonStyle = {
@@ -20,10 +22,15 @@ const Button = (props) => {
     fontSize: fontSize ? fontSize : "1rem",
     border: border ? border : "1px solid black",
     cursor: "pointer",
+    fontWeight: fontWeight ? fontWeight : 100,
+    margin: margin ? margin : null,
   };
 
   return (
-    <button style={buttonStyle}>
+    <button
+      style={buttonStyle}
+      onClick={onClickFunction ? onClickFunction : null}
+    >
       {" "}
       {buttonText ? buttonText : "Click Me"}{" "}
     </button>

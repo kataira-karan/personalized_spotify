@@ -3,9 +3,7 @@ import UserDetails from "./UserDetails";
 import "./UserProfileStyle.css";
 import Header from "../Headers/Header";
 import PrimayCard from "../PrimaryCard/PrimayCard";
-import { getCurrentUserTopArtists, getTopArtists } from "../../Spotify";
-import Button from "../Button/Button";
-import { logout } from "../../Spotify";
+import { miliToMinAndSec } from "../../Spotify";
 import axios from "axios";
 import SongContainer from "../SongContainer/SongContainer";
 
@@ -22,6 +20,7 @@ const UserProfile = (props) => {
         const playlistsData = await axios.get("/me/playlists");
         // console.log(playlistsData.data);
         setplaylists(playlistsData.data.items);
+        console.log(playlistsData);
 
         // getting top artists
         const topTracks = await axios.get("/me/top/artists");
@@ -30,7 +29,7 @@ const UserProfile = (props) => {
         const recentlyPlayedSongs = await axios.get(
           "/me/player/recently-played"
         );
-        console.log(recentlyPlayedSongs.data);
+        // console.log(recentlyPlayedSongs.data);
         setrecentlyPlayedSongs(recentlyPlayedSongs.data.items);
       } catch (error) {
         console.log(error);
@@ -46,34 +45,8 @@ const UserProfile = (props) => {
 
   return (
     <div className="user-profile-section">
-      <button onClick={logout}>Logout</button>
-      <div className="user-profile-container">
-        <div className="nav-container">
-          <ul className="nav-container-list">
-            <li className="nav-item logo-item">
-              <a href="spotify:user:31exs7adkcfqiivz5f2o3q33nlse">
-                <img
-                  className="spotify-logo"
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png"
-                />{" "}
-              </a>
-            </li>
-
-            <ul className="detail-list">
-              <li className="detail-list-item"> Profile </li>
-              <li className="detail-list-item"> Top artist </li>
-              <li className="detail-list-item"> Top Tracks </li>
-              <li className="detail-list-item"> Recents </li>
-              <li className="detail-list-item"> playlists </li>
-            </ul>
-
-            <li className="list-item git-item"> MY Git</li>
-          </ul>
-        </div>
-        <div className="profile-container">
-          <UserDetails profile={profile} />
-        </div>
-      </div>
+      {/* <button onClick={logout}>Logout</button> */}
+      <UserDetails profile={profile} />
 
       <div className="user-track-list">
         <div className="artists-container">
@@ -92,8 +65,10 @@ const UserProfile = (props) => {
             ) : (
               <>
                 {" "}
-                {playlists.map((playlist) => {
-                  return <PrimayCard playlist={playlist}></PrimayCard>;
+                {playlists.map((playlist, index) => {
+                  return (
+                    <PrimayCard index={index} playlist={playlist}></PrimayCard>
+                  );
                 })}{" "}
               </>
             )}
