@@ -82,6 +82,7 @@ const UserProfile = (props) => {
             padding="1rem"
             fontSize="1.2rem"
             color="white"
+            isButton={true}
             buttonFunction={seeAllTopTracks}
           ></Header>
           <div className="top-songs">

@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../UserProfile/UserProfileStyle.css";
 import { Link } from "react-router-dom";
+import { gsap, Expo } from "gsap";
+
 const Sidebar = () => {
   const [currentPage, setcurrentPage] = useState("userProfile");
 
@@ -18,6 +20,21 @@ const Sidebar = () => {
     }
   };
 
+  useEffect(() => {
+    var navTimeLine = gsap.timeline();
+    navTimeLine.fromTo(".nav-container", { x: -100 }, { x: 0, duration: 1 });
+    navTimeLine.fromTo(".spotify-logo", { x: -130 }, { x: 0, duration: 1 });
+    navTimeLine.fromTo(
+      ".side-bar-link",
+      { x: -150 },
+      {
+        x: 0,
+        duration: 0.5,
+        stagger: 1,
+      }
+    );
+  }, []);
+
   return (
     <div className="nav-container">
       <ul className="nav-container-list">
@@ -30,10 +47,10 @@ const Sidebar = () => {
           </a>
         </li>
 
-        <ul className="detail-list">
+        <ul className="detail-list ">
           <Link to="/">
             <li
-              className="detail-list-item active"
+              className="side-bar-link detail-list-item active"
               onClick={(e) => handlePage(e)}
             >
               {" "}
@@ -41,29 +58,31 @@ const Sidebar = () => {
             </li>
           </Link>
 
-          {/* <Link to="/top-artist" className="side-bar-link">
-            <li className="detail-list-item" onClick={(e) => handlePage(e)}>
-              {" "}
-              Top artist{" "}
-            </li>
-          </Link> */}
-
-          <Link to="/top-tracks" className="side-bar-link">
-            <li className="detail-list-item" onClick={(e) => handlePage(e)}>
+          <Link to="/top-tracks">
+            <li
+              className="side-bar-link  detail-list-item"
+              onClick={(e) => handlePage(e)}
+            >
               {" "}
               top-tracks{" "}
             </li>
           </Link>
 
-          <Link to="/playlists" className="side-bar-link">
-            <li className="detail-list-item" onClick={(e) => handlePage(e)}>
+          <Link to="/playlists">
+            <li
+              className=" side-bar-link  detail-list-item"
+              onClick={(e) => handlePage(e)}
+            >
               {" "}
               Playlists{" "}
             </li>
           </Link>
 
-          <Link to="/recently-played" className="side-bar-link">
-            <li className="detail-list-item" onClick={(e) => handlePage(e)}>
+          <Link to="/recently-played">
+            <li
+              className=" side-bar-link detail-list-item"
+              onClick={(e) => handlePage(e)}
+            >
               {" "}
               Recently Played{" "}
             </li>

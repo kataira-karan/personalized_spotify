@@ -65,11 +65,14 @@
   flex-wrap: wrap;
   /* overflow: scroll; */
 }
-.top-artists::-webkit-scrollbar,
-.top-songs::--webkit-scrollbar
-.user-track-list {
+.top-songs{
+  overflow: scroll;
+  height: 100%;
+}
+.top-songs::-webkit-scrollbar{
   display: none;
 }
+
 .artists-container {
   width: 60%;
   margin-right: 2rem;

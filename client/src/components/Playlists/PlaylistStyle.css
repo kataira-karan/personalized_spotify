@@ -1,14 +1,28 @@
-.playlist-page-header {
-  height: 40vh;
-  width: 100%;
-  padding: 2rem;
+.playlist-page-container{
+  height: 100vh;
   background-image: linear-gradient(
     to bottom,
-    #0651c2,
-    #0851b5,
-    #1251a9,
-    #1c509b,
-    #254f8e
+    #254f8e,
+    #263c69,
+    #202946,
+    #171927,
+    #030304
   );
-  box-shadow: 2px 2px 2px #171927;
+}
+
+
+.playlist-page-header {
+  width: 100%;
+  padding: 2rem;
+
+}
+
+.playlists-container {
+
+  padding: 2rem;
+}
+
+.playlists-container{
+  display: flex;
+  flex-wrap: wrap;
 }
